@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+        <link rel="stylesheet" href="{% static 'css/w3-theme-black.css' %}">
+        <link rel="stylesheet" href="{% static 'css/css.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+    <title>Crud</title>
+</head>
+<body>
+    {% include "navbar.html" %}
+    {% include "sidebar.html" %}
+    <div class="w3-main" style="margin-left:250px">
+        <div class="w3-row w3-padding-64">
+            <div class="w3-container">
+    {% block container %}
+    {% endblock %}
+            </div>
+        </div>
+    </div>
+    {% block footer_js %}
+        <script src="{% static 'js/app.js' %}"></script>
+    {% endblock footer_js %}
+</body>
+</html>

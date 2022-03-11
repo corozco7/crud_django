@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks static %}
+
+{% block container %}
+
+    <div class="w3-card-4 w3-padding-16">
+        <form method="post" enctype="multipart/form-data" class="w3-container">
+            {% csrf_token %}
+            {{ form.non_field_errors}}
+            {% for form_item in form %}
+                <div class="w3-col s12 w3-center">
+                    {{ form_item.errors }}
+                    {{ form_item.label_tag }}
+                    {% render_field form_item class+="w3-input" %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="w3-button w3-green w3-margin-top">Actualizar</button>
+        </form>
+    </div>
+
+{% endblock %}

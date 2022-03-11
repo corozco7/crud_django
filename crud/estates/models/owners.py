@@ -22,15 +22,19 @@ class Owner(models.Model):
         verbose_name="tipo de documento"
     )
 
-    document_number = models.CharField(max_length=150, verbose_name="Numero de Documento")
+    document_number = models.CharField(
+        max_length=150,
+        unique=True,
+        verbose_name="Numero de Documento")
     address = models.CharField(max_length=100, verbose_name="Direccion")
     phone_number = models.CharField(max_length=20,verbose_name="Telefono")
     email = models.EmailField(
 		max_length=150,
 		null=True,
+        blank=True,
 		verbose_name="Correo Electronico"
 	)
     
     def __str__(self):
-	    return self.name
+        return self.name
     

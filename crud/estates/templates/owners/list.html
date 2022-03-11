@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+    <a href="{% url 'owners:create' %}" class="w3-button w3-green">Agregar Propietario</a>
+    <table class="w3-table-all">
+        <thead>
+            <tr class="w3-green">
+                <th>Nombre</th>
+                <th>Tipo de documento</th>
+                <th>Documento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for owner in owners %}
+            <tr>
+                <td>{{ owner.name }}</td>
+                <td>{{ owner.document_type }}</td>
+                <td>{{ owner.document_number }}</td>
+                <td>
+                    <a href="{% url 'owners:detail' pk=owner.pk %}"><i class="fa fa-file"></i></a>
+                    <a href="{% url 'owners:update' pk=owner.pk %}"><i class="fa fa-pencil"></i></a>
+                    <a href="{% url 'owners:delete' pk=owner.pk %}"><i class="fa fa-close"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

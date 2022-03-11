@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+    <div class="w3-card-4" style="width:50%;">
+        <header class="w3-container w3-green">
+            <h3>{{ owner.name }}</h3>
+        </header>
+        <div class="w3-container">
+            <p>Tipo de documento: {{ owner.document_type }}</p>
+            <p>Numero de documento: {{ owner.document_number }}</p>
+            <p>Direccion: {{ owner.address }}</p>
+            <p>Telefono: {{ owner.phone_number }}</p>
+            {% if owner.email == None %}
+            <p>Correo electronico: No tiene</p>
+            {% else %}
+            <p>Correo electronico: {{ owner.email }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

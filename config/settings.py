@@ -52,6 +52,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "cities_light",
     "smart_selects",
+    'widget_tweaks',
 ]
 
 LOCAL_APPS  = [
