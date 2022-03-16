@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+    <a href="{% url 'terrains:create' %}" class="w3-button w3-green">Agregar Terreno</a>
+    <table class="w3-table-all">
+        <thead>
+            <tr class="w3-green">
+                <th>Tipo de Terreno</th>
+                <th>Valor comercial</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for terrain in terrains %}
+            <tr>
+                <td>{{ terrain.get_terrain_type_display }}</td>
+                <td>{{ terrain.value }}</td>
+                <td>
+                    <a href="{% url 'terrains:detail' pk=terrain.pk %}"><i class="fa fa-file"></i></a>
+                    <a href="{% url 'terrains:update' pk=terrain.pk %}"><i class="fa fa-pencil"></i></a>
+                    <a href="{% url 'terrains:delete' pk=terrain.pk %}"><i class="fa fa-close"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

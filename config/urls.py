@@ -21,5 +21,6 @@ urlpatterns = [
 
     path('chaining/', include('smart_selects.urls')),
     path('', include(('crud.estates.urls.estates', 'estates'), namespace="estates")),
-    path('owners/', include(('crud.estates.urls.owners', 'owners'), namespace="owners"))
+    path('owners/', include(('crud.estates.urls.owners', 'owners'), namespace="owners")),
+    path('terrains/', include(('crud.estates.urls.terrains', 'terrains'), namespace="terrains"))
 ]

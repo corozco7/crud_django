@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+    <div class="w3-card-4" style="width:50%;">
+        <header class="w3-container w3-green">
+            <h3>Terreno #{{ terrain.pk }}</h3>
+        </header>
+        <div class="w3-container">
+            <p>Area del terreno: {{terrain.area}}m<sup>2</sup></p>
+            <p>Valor comercial: {{terrain.value}}$</p>
+            <p>Tipo de terreno: {{ terrain.get_terrain_type_display }}</p>
+            {% if terrain.water_source %}
+            <p>¿Fuente de agua cerca?: Si</p>
+            {% else %}
+            <p>¿Fuente de agua cerca?: No</p>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

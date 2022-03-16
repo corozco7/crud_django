@@ -1,12 +1,11 @@
-"""Owners Views."""
+"""Owners views."""
 
 # Django
-from pyexpat import model
 from django.views.generic import DetailView, CreateView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-# Model
-from crud.estates.models import Owner
+# Models
+from ..models import Owner
 
 # Forms
 from ..forms import OwnerForm

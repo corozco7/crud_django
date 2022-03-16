@@ -4,7 +4,7 @@
 from django.urls import path
 
 # Views
-from crud.estates.views import owners as owners_views
+from ..views import owners as owners_views
 
 
 urlpatterns = [

@@ -10,7 +10,6 @@ class Terrain(models.Model):
 
     area = models.PositiveIntegerField(verbose_name="Area del terreno")
     value = models.PositiveIntegerField(verbose_name="Valor comercial")
-    water_source = models.BooleanField(verbose_name="¿Fuente de agua cerca?")
 
     class TerrainTypeOptions(models.TextChoices):
         URBAN = "UR", _("Urbano")
@@ -22,3 +21,4 @@ class Terrain(models.Model):
         default=TerrainTypeOptions.RURAL,
         verbose_name="tipo de documento"
     )
+    water_source = models.BooleanField(verbose_name="¿Fuente de agua cerca?")
