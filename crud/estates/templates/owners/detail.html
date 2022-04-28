@@ -11,10 +11,10 @@
             <p>Numero de documento: {{ owner.document_number }}</p>
             <p>Direccion: {{ owner.address }}</p>
             <p>Telefono: {{ owner.phone_number }}</p>
-            {% if owner.email == None %}
-            <p>Correo electronico: No tiene</p>
-            {% else %}
+            {% if owner.email %}
             <p>Correo electronico: {{ owner.email }}</p>
+            {% else %}
+            <p>Correo electronico: No tiene</p>
             {% endif %}
         </div>
     </div>

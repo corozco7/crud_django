@@ -11,12 +11,12 @@ urlpatterns = [
     path(
         route="",
         view=owners_views.OwnerListView.as_view(),
-        name='list'
+        name="list"
     ),
     path(
         route="create/",
         view=owners_views.CreateOwnerView.as_view(),
-        name='create'
+        name="create"
     ),
     path(
         route="<int:pk>/",

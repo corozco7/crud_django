@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+    <a href="{% url 'estates:create' %}" class="w3-button w3-green">Agregar Predio</a>
+    <table class="w3-table-all">
+        <thead>
+            <tr class="w3-green">
+                <th>Nombre del terreno</th>
+                <th>Numero Predial</th>
+                <th>Avaluo</th>
+                <th>Propietario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estate in estates %}
+            <tr>
+                <td>{{ estate.name }}</td>
+                <td>{{ estate.estate_number }}</td>
+                <td>{{ estate.value }}</td>
+                <td>{{ estate.owner }}</td>
+                <td>
+                    <a href="{% url 'estates:detail' pk=estate.pk %}"><i class="fa fa-file"></i></a>
+                    <a href="{% url 'estates:update' pk=estate.pk %}"><i class="fa fa-pencil"></i></a>
+                    <a href="{% url 'estates:delete' pk=estate.pk %}"><i class="fa fa-close"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

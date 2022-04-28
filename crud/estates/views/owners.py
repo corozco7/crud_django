@@ -15,7 +15,7 @@ class OwnerListView(ListView):
     """Return the list of owners."""
     template_name = 'owners/list.html'
     model = Owner
-    context_object_name = 'owners'
+    context_object_name = "owners"
 
 
 class CreateOwnerView(CreateView):

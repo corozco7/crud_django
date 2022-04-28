@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+    <div class="w3-card-4" style="width:50%;">
+        <header class="w3-container w3-green">
+            <h3>predio {{estate.estate_number}}</h3>
+        </header>
+        <div class="w3-container">
+            <p>Propietario: {{ estate.owner }}</p>
+            {% if estate.terrain %}
+            <p>Terreno: {{ estate.terrain }}</p>
+            {% else %}
+            <p>Terreno: No tiene</p>
+            {% endif %}
+            <p>Nombre: {{ estate.name }}</p>
+            <p>Avaluo: {{ estate.value }}</p>
+            <p>Departamento: {{ estate.department }}</p>
+        </div>
+    </div>
+
+{% endblock %}

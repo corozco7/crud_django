@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+    <div class="w3-card-4 w3-padding-16" style="width: 39%;">
+        <form method="post" class="w3-container">
+            {% csrf_token %}
+            <p>
+                Esta usted seguro de que va a borrar este predio?<br>
+                Numero predial: {{estate.estate_number}}
+            </p>
+            <button type="submit" class="w3-button w3-green w3-margin-top">Borrar</button>
+        </form>
+    </div>
+
+{% endblock %}

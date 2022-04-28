@@ -8,6 +8,12 @@ from django.utils.translation import ugettext_lazy as _
 class Terrain(models.Model):
     """Terrain model."""
 
+    id = models.BigAutoField(
+        auto_created=True,
+        primary_key=True,
+        serialize=False
+    )
+
     area = models.PositiveIntegerField(verbose_name="Area del terreno")
     value = models.PositiveIntegerField(verbose_name="Valor comercial")
 
@@ -22,3 +28,6 @@ class Terrain(models.Model):
         verbose_name="tipo de documento"
     )
     water_source = models.BooleanField(verbose_name="¿Fuente de agua cerca?")
+
+    def __str__(self):
+        return f"Lote {self.id}"
